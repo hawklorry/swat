@@ -322,8 +322,12 @@
       
        case (3)  !! READ IN PET VALUES
         pet_day = petmeas
-  
+       case (4)  !! READ DAILY SUBBASIN PET
+        read (140,5100) pet_day
+        write(123456,*) ihru, pet_day
       end select
 
       return
+ 5000 format (i4,i3,f6.3) !!3 decimals
+ 5100 format (7x,f6.3)
       end

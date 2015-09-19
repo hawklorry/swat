@@ -19,6 +19,11 @@
 	j = ihru
 !! if the HRU is water compute only pet and et
 !! using Priestly-Taylor and a coefficient
+        if(ipet == 4) then
+            read (140,5100) pet_day
+            write(123456,*) ihru, pet_day          
+        endif
+      
         tmpk = 0.
         d = 0.
         gma = 0.
@@ -33,4 +38,5 @@
         etday = .7 * pet_day
       
       return
+ 5100 format (7x,f6.3)
       end
