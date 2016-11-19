@@ -479,6 +479,10 @@
       real, dimension (:), allocatable :: n_reduc, n_lag, n_ln, n_lnco 
       integer, dimension (:), allocatable :: ioper
       integer, dimension (:), allocatable :: ngrwat
+      !!The file hanle of the hru pet file
+      !!default value is -1 which means no hru pet file exist
+      integer, dimension (:), allocatable :: ihrupetfile
+      integer ihrupetfile_handle
       real, dimension (:), allocatable :: filterw,sumix,usle_ls,phuacc
       real, dimension (:), allocatable :: esco,epco,slsubbsn,hru_slp
       real, dimension (:), allocatable :: erorgn,erorgp,biomix,pnd_seci

@@ -136,7 +136,10 @@
       character (len=80) :: titldum, snofile
       character (len=13) :: hrufile, chmfile, mgtfile, solfile, gwfile
       character (len=13) :: opsfile, wgnfile, pndfile, wusfile, septfile
-	  character (len=13) :: sdrfile, ltcfile
+      character (len=13) :: sdrfile, ltcfile
+      !!The file name of the hru pet file. It assumes it has the same name as the hru file with txt extention.
+      character (len=13) :: hrupetfile   
+      logical hrupetfile_exist
       integer :: eof, mon, j, jj, ip, if, ir
       real :: ssnoeb(10), sno_sub, ch_ls, sumebfr
 
@@ -251,6 +254,7 @@
 !         irip(ihru) = ir
           chmfile = ""
           hrufile = ""
+          hrupetfile = ""
           mgtfile = ""
           solfile = ""
           gwfile = ""
@@ -260,6 +264,21 @@
          read (101,5300) hrufile, mgtfile, solfile, chmfile, gwfile,
      & opsfile, septfile, sdrfile, ils2(ihru)
           call caps(hrufile)
+
+!! ~~~ HRU PET FILE ~~~
+!! Zhiqiang
+!!        Try to see if the hru pet file exist
+          hrupetfile = hrufile
+          hrupetfile(11:13) = "txt" !!replace the extension hru to txt
+          inquire(file=hrupetfile,exist=hrupetfile_exist) !! see if the pet file exist
+          if(hrupetfile_exist) then 
+              ihrupetfile_handle = ihrupetfile_handle + 1 !! get the unique file unit for the pet file
+              open(ihrupetfile_handle,file=hrupetfile)
+              ihrupetfile(ihru) = ihrupetfile_handle      !! save the file unit to the array to be used later
+              write(*,5600) hrupetfile,ihru
+          end if          
+!! ~~~ HRU PET FILE ~~~
+          
           call caps(mgtfile)
           call caps(solfile)
           call caps(chmfile)
@@ -472,4 +491,5 @@
  5300 format (8a13,i6)
  5400 format (i4,6f8.3)
  5500 format (2i4)
+ 5600 format ('HRU PET Data from ', a13, ' for HRU ', i5)
       end

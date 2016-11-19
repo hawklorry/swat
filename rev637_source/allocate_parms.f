@@ -1204,6 +1204,8 @@
       allocate (potsa(mhru))
       allocate (potsedi(mhru))
       
+      allocate (ihrupetfile(mhru))
+      
       allocate (potsani(mhru))
       allocate (potsili(mhru))
       allocate (potclai(mhru))

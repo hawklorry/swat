@@ -334,6 +334,8 @@
       inum8s = 1
       iop = 0
       ioper = 1
+      ihrupetfile = -1
+      ihrupetfile_handle = 10000
       iopera = 1
       iopday = 0
       iopyr = 0

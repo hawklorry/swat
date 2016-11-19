@@ -126,6 +126,14 @@
         close (i)
       end do
       close(124)
+      
+!! Close hru pet file if any
+      do i = 1, mhru
+          if(ihrupetfile(i) > 0)then
+              close(ihrupetfile(i))
+          end if
+      end do
+      
       write (*,1001)
  1001 format (/," Execution successfully completed ")
 	

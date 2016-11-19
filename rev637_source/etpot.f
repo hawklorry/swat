@@ -323,7 +323,17 @@
        case (3)  !! READ IN PET VALUES
         pet_day = petmeas
   
-      end select
+       end select
+       
+!! ~~~ HRU PET FILE ~~~
+!! Zhiqiang
+!! Read hru pef from file if the file exist
+!! Overwrite the value from other methods
+       if(ihrupetfile(ihru) > 0) then
+           read(ihrupetfile(ihru),*) pet_day
+           !!write(12345,*) ihru, pet_day
+       end if 
+!! ~~~ HRU PET FILE ~~~
 
       return
       end
