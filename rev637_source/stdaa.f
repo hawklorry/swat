@@ -565,7 +565,7 @@
      &        t15,'PET = ',f8.1,'MM'/                                   
      &        t15,'TRANSMISSION LOSSES = ',f8.2,' MM'/                
      &        t15,'SEPTIC INFLOW = ',f10.2,' MM'/                       
-     &        t15,'TOTAL SEDIMENT LOADING =  ',f8.3,' T/HA')
+     &        t15,'TOTAL SEDIMENT LOADING =  ',f8.2,' T/HA')
  !    &        t15,'POND BUDGET'/                                        
  !    &        t20,'EVAPORATION = ',f8.3,' MM'/                          
  !    &        t20,'SEEPAGE = ',f8.3,' MM'/                              &

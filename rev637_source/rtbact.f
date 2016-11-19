@@ -10,10 +10,11 @@
 !!    hhvaroute(2,:,:) |m^3 H2O     |water flowing into reach on day
 !!    hhvaroute(18,:,:)|# cfu/100ml |persistent bacteria
 !!    hhvaroute(19,:,:)|# cfu/100ml |less persistent bacteria
-!!    ievent           |none        |rainfall/runoff code
-!!                                  |0 daily rainfall/curve number technique
-!!                                  |1 sub-daily rainfall/Green&Ampt/hourly
-!!                                  |  routing
+!!    ievent      |none          |rainfall/runoff code
+!!                               |0 daily rainfall/curve number technique
+!!                               |1 sub-daily rainfall/Green&Ampt/hourly
+!!                               |  routing
+!!                               |3 sub-daily rainfall/Green&Ampt/hourly routing
 !!    inum1            |none        |reach number
 !!    inum2            |none        |inflow hydrograph storage location number
 !!    rch_bactlp(:)    |# cfu/100ml |less persistent bacteria stored in reach

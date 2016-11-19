@@ -402,6 +402,8 @@
 !    groundwater deep
       pdvas(77) = gw_qdeep(j)
       pdvas(78) = latq(j) - lpndloss - lwetloss
+!!    phos due to crack flow (tvap)
+      pdvas(79) = vap_tile
 
       call xmon 
           
@@ -537,8 +539,8 @@
 
       return
 
-1000  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,2f10.3,1x,i4)
-1001  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,2f10.3)
+1000  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,3f10.3,1x,i4)
+1001  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,3f10.3)
 9000  format(i4,i4,i2,i8,21(f16.3))
 9001  format(i4,i4,i8,48(f16.3))
       end

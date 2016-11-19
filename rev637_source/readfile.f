@@ -537,13 +537,10 @@
 	if (isnow == 1) then
          open (115,file='output.snw')
          write (115,1010)
+!!    output temperatures by elevation band (Dhiraj Raj - 07/22/2015)
+         open (116,file='ebandtemp.out')
+         write (116,1011)
       end if
-
-
-!!   read landuse change file
-!     read (101,5000,iostat=eof)  lucfile
-!     call caps (lucfile)
-
 
       !!Set default output variables for REACH, SUBBASIN and HRU files if none
       !!were specified
@@ -759,16 +756,19 @@
      & '(kg/ha)','(kg/ha)','(mg/l)'
 
 !!   charles ikenberry output file
-      open (2222,file='charles.out',recl=800)
-      write (2222,2222) 
-2222  format (3x,'yr',2x,'day',5x,'res_vol',7x,'res_no3',7x,'ressa',
-     & 6x,'conc_n',4x,'con_nirr',6x,'nsetlr',5x,'theta_n',7x,'tmpav',
-     & 6x,'nitrok',/,15x,'m3',12x,'kg',12x,'ha',9x,'kg/m3',5x,'kg/m3',
-     & 9x,'--',9x,'--',12x,'deg c',6x,'--')
+!      open (2222,file='charles.out',recl=800)
+!      write (2222,2222) 
+!2222  format (3x,'yr',2x,'day',5x,'res_vol',7x,'res_no3',7x,'ressa',
+!     & 6x,'conc_n',4x,'con_nirr',6x,'nsetlr',5x,'theta_n',7x,'tmpav',
+!     & 6x,'nitrok',/,15x,'m3',12x,'kg',12x,'ha',9x,'kg/m3',5x,'kg/m3',
+!     & 9x,'--',9x,'--',12x,'deg c',6x,'--')
       close (101)
       return
 
  1010 format (32x,'SNOW(mm) at ELEVATION BAND (1-10)',/,                
+     &1x,'DAY','   YR',t14,'GISnum',t28,'1',t36,'2',t44,'3',t52,'4',    
+     &t60,'5',t68,'6',t76,'7',t84,'8',t92,'9',t99,'10')
+ 1011 format (32x,'Average TEMP(deg C) at ELEVATION BAND (1-10)',/,
      &1x,'DAY','   YR',t14,'GISnum',t28,'1',t36,'2',t44,'3',t52,'4',    
      &t60,'5',t68,'6',t76,'7',t84,'8',t92,'9',t99,'10')
  5000 format (6a)
