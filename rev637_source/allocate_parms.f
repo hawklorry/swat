@@ -1869,7 +1869,18 @@
 	allocate(emitc_a(mhru))
 	allocate(soc_a(mhru))
 	allocate(rspc_a(mhru))	
-
+      
+      !!allocate variables for channel flood plain
+      allocate (wetlandup_ara(msub))
+      allocate (wetlandup_vol(msub))
+      allocate (wetlandfp_ara(msub))
+      allocate (wetlandfp_vol(msub))
+      allocate (manning_fpn(msub))
+      allocate (floodplain_wdh(msub))
+      allocate (floodplain_prp(msub))
+      allocate (wetdrain_frc(msub))
+      
+      
        !Tillage factor on SOM decomposition
        allocate(tillage_switch(mhru))
        allocate(tillage_depth(mhru))

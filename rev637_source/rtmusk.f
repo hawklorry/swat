@@ -194,9 +194,19 @@
 	  Do While (sdti < volrt)
           adddep = adddep + 0.01
           addarea = rcharea + ((ch_w(2,jrch) * 5) + 4 * adddep) * adddep
-          addp = p + (ch_w(2,jrch) * 4) + 2. * adddep * Sqrt(1. + 4 * 4)
+          addp = p + 2. * adddep * Sqrt(1. + 4 * 4)
+          if(unit_floodplain_wdh > 0) then 
+              addp = addp + ch_w(2,jrch) + floodplain_wdh(jrch) !!use real width if possible
+          else
+              addp = addp + (ch_w(2,jrch) * 4)
+          end if
 	    rh = addarea / addp
-          sdti = Qman(addarea, rh, ch_n(2,jrch), ch_s(2,jrch))
+          if(unit_manning_fpn > 0) then
+              sdti = Qman(addarea, rh, ch_n(2,jrch) + manning_fpn(jrch), !!use combined n if possible
+     &                ch_s(2,jrch))
+          else
+              sdti = Qman(addarea, rh, ch_n(2,jrch), ch_s(2,jrch))
+          end if
 	  end do
 	  rcharea = addarea
 	  rchdep = ch_d(jrch) + adddep

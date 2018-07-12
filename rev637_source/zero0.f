@@ -541,6 +541,25 @@
       wshd_aamon = 0.
 !      wshddayo = 0.
       yr_skip = 0
+      
+      !!initialize channel floodplain variables
+      wetlandup_ara = 0.
+      wetlandup_vol = 0.
+      wetlandfp_ara = 0.
+      wetlandfp_vol = 0.
+      manning_fpn = 0.
+      floodplain_wdh = 0.
+      floodplain_prp = 0.
+      wetdrain_frc = 0.
+      
+      unit_wetlandup_ara = 0
+      unit_wetlandup_vol = 0
+      unit_wetlandfp_ara = 0
+      unit_wetlandfp_vol = 0
+      unit_manning_fpn = 0
+      unit_floodplain_wdh = 0
+      unit_floodplain_prp = 0
+      unit_wetdrain_frc = 0
 
       return
       end

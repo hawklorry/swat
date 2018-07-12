@@ -966,6 +966,24 @@
       ! tillage_factor: = 1.6 in 30 days after tillage practices occur; otherwise 1.0;
 !! By Zhang for C/N cycling
 
+      !!variables for channel flood plain changes proposed by Adnan
+      !!the variable name is similar to the input file name
+      real, dimension (:), allocatable :: wetlandup_ara   !!upland wetland area, total surface area of wetlands outside of the floodplain boundary
+      real, dimension (:), allocatable :: wetlandup_vol   !!upland wetland volume
+      real, dimension (:), allocatable :: wetlandfp_ara   !!floodplain wetland area
+      real, dimension (:), allocatable :: wetlandfp_vol   !!floodplain wetland volume
+      real, dimension (:), allocatable :: manning_fpn     !!surface roughness of the area bounded by the floodplain boundary
+      real, dimension (:), allocatable :: floodplain_wdh  !!floodplain width
+      real, dimension (:), allocatable :: floodplain_prp  !!portion of the total sub-basin area outside the floodplian bounary
+      real, dimension (:), allocatable :: wetdrain_frc    !!impervious fraction
 
-
+      integer :: unit_wetlandup_ara   !!upland wetland area, total surface area of wetlands outside of the floodplain boundary
+      integer :: unit_wetlandup_vol   !!upland wetland volume
+      integer :: unit_wetlandfp_ara   !!floodplain wetland area
+      integer :: unit_wetlandfp_vol   !!floodplain wetland volume
+      integer :: unit_manning_fpn     !!surface roughness of the area bounded by the floodplain boundary
+      integer :: unit_floodplain_wdh  !!floodplain width
+      integer :: unit_floodplain_prp  !!portion of the total sub-basin area outside the floodplian bounary
+      integer :: unit_wetdrain_frc    !!impervious fraction
+      
       end module parm

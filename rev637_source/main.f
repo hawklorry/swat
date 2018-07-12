@@ -76,7 +76,9 @@
       call readurban             !! read in the urban land types database
       call readseptwq            !! read in the septic types database
       call readlup
+      call fp_open
       call readfig
+      call fp_close
       call readatmodep
       call readinpt
       call std1

@@ -199,6 +199,7 @@
               subed(ihouts(idum)) = inum4s(idum)
               open (101,file=subfile)
               call readsub
+              call fp_read !!channel floodplain
               nhru = nhru + hrutot(i)
 
             case (2)  !! icode = 2  ROUTE CHANNEL command
